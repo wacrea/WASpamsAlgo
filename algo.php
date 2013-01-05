@@ -29,12 +29,12 @@
 	$i = 0;
 
 	$APIKey = '5adeec31c278';
-	$BlogURL = 'http://bloglancome.isphers.com'
-
+	$BlogURL = 'http://bloglancome.isphers.com';
 	$Akismet = new Akismet($BlogURL, $APIKey);
+		
 
 	foreach($comments AS $comment)
-	{
+	{	
 		$i++;
 
 		$Akismet->setCommentAuthor($comment->comment_author);
