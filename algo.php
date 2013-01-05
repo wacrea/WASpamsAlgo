@@ -28,7 +28,6 @@
 
 	$i = 0;
 
-<<<<<<< HEAD
 	$APIKey = '5adeec31c278';
 	$BlogURL = 'http://bloglancome.isphers.com';
 	$Akismet = new Akismet($BlogURL, $APIKey);
