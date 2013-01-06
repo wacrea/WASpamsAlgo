@@ -20,7 +20,7 @@
 	  die();
 	}
 
-	$select = $connection->query("SELECT * FROM wp_comments");
+	$select = $connection->query("SELECT * FROM wp_comments WHERE comment_approved = 0");
 	$comments = $select->fetchAll(PDO::FETCH_OBJ);
 	
 	$total = count($comments);
@@ -50,6 +50,7 @@
 		}
 		else
 		{
+			$connection->query("UPDATE wp_comments SET comment_approved = 1 WHERE comment_ID = '".$comment->comment_ID."'");
 			echo $i."/".$total." - ok\n";
 		}
 	}
